@@ -1,0 +1,29 @@
+[
+  {
+	"quiz_question": "sample question 1",
+	"quiz_answers": [
+	  "a",
+	  "b",
+	  "c"
+	],
+	"quiz_correct_answer": "c"
+  },
+  {
+	"quiz_question": "sample question 2",
+	"quiz_answers": [
+	  "a",
+	  "b",
+	  "c"
+	],
+	"quiz_correct_answer": "a"
+  },
+  {
+	"quiz_question": "sample question 3",
+	"quiz_answers": [
+	  "a",
+	  "b",
+	  "c"
+	],
+	"quiz_correct_answer": "b"
+  }
+]

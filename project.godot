@@ -11,18 +11,19 @@ config_version=5
 [application]
 
 config/name="ISAT_Tour [Beta]"
-run/main_scene="res://Scene/Gender_Selection.tscn"
+run/main_scene="res://Quiz.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
-config/icon="res://png/icon.svg"
+config/icon="res://Master/Assets/Art/icon.svg"
 
 [autoload]
 
-Global="*res://GD script/Global.gd"
+QuizManager="*res://Master/Scripts/QuizManager.gd"
 
-[editor]
+[input_devices]
 
-version_control/autoload_on_startup=true
+pointing/emulate_touch_from_mouse=true
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
