@@ -11,8 +11,17 @@ config_version=5
 [application]
 
 config/name="ISAT_Tour [Beta]"
-config/features=PackedStringArray("4.2", "Mobile")
-config/icon="res://icon.svg"
+run/main_scene="res://Scene/Gender_Selection.tscn"
+config/features=PackedStringArray("4.3", "Mobile")
+config/icon="res://png/icon.svg"
+
+[autoload]
+
+Global="*res://GD script/Global.gd"
+
+[editor]
+
+version_control/autoload_on_startup=true
 
 [rendering]
 
