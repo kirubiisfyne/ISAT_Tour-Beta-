@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://oqrp7qkuvc2i"]
+
+[ext_resource type="Texture2D" uid="uid://bb7gtwqibbl1l" path="res://Master/Assets/Art/Backgrounds/background_guard.jpg" id="1_3vxa2"]
+[ext_resource type="PackedScene" uid="uid://cnaf2ioq61qq6" path="res://Master/Scenes/character_male.tscn" id="2_6sqvr"]
+[ext_resource type="PackedScene" uid="uid://pl6k2kyosd5l" path="res://Master/Scenes/dialog_ui.tscn" id="4_20h6k"]
+
+[node name="CompDept Main" type="Node2D"]
+
+[node name="background" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="background"]
+layout_mode = 1
+offset_right = 4424.0
+offset_bottom = 648.0
+texture = ExtResource("1_3vxa2")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+build_mode = 1
+polygon = PackedVector2Array(0, 0, 0, 525, 4424, 525, 4424, 0)
+
+[node name="Main Male" parent="." instance=ExtResource("2_6sqvr")]
+z_index = 1
+position = Vector2(-448, 32)
+
+[node name="Camera2D" parent="Main Male/CharacterBody2D" index="2"]
+limit_right = 1899
+
+[node name="Left" parent="Main Male/Door Transition/AnimationPlayer" index="0"]
+visible = false
+
+[node name="Right" parent="Main Male/Door Transition/AnimationPlayer" index="1"]
+visible = false
+
+[node name="Dialog Main" parent="." instance=ExtResource("4_20h6k")]
+visible = false
+
+[editable path="Main Male"]
+[editable path="Main Male/Door Transition"]

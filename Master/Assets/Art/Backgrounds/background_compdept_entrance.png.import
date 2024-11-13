@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4pko4o445ilj"
-path="res://.godot/imported/sprite-textBubble-export.png-32292153d6da17a0cee42aac495320a9.ctex"
+uid="uid://civogx5c2ohqv"
+path="res://.godot/imported/background_compdept_entrance.png-6910f5602ae03316114062bda4197073.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Master/Assets/Art/sprite-textBubble-export.png"
-dest_files=["res://.godot/imported/sprite-textBubble-export.png-32292153d6da17a0cee42aac495320a9.ctex"]
+source_file="res://Master/Assets/Art/Backgrounds/background_compdept_entrance.png"
+dest_files=["res://.godot/imported/background_compdept_entrance.png-6910f5602ae03316114062bda4197073.ctex"]
 
 [params]
 

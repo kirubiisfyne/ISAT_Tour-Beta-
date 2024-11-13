@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://i60a7v355voe"]
+
+[ext_resource type="Texture2D" uid="uid://c5roca0hquy8o" path="res://Master/Assets/Art/Characters/sprite_gabawa.png" id="1_xguba"]
+[ext_resource type="Script" path="res://Master/Scripts/npc_manager.gd" id="2_gdfus"]
+[ext_resource type="PackedScene" uid="uid://pl6k2kyosd5l" path="res://Master/Scenes/dialog_ui.tscn" id="3_cli33"]
+[ext_resource type="PackedScene" uid="uid://baa4dpok3q11u" path="res://Master/Scenes/quiz_ui.tscn" id="4_l6prb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jw1s5"]
+size = Vector2(1920, 1520)
+
+[node name="NPC Main" type="Node2D"]
+script = ExtResource("2_gdfus")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_xguba")
+
+[node name="Dialog Area Trigger" type="Area2D" parent="."]
+process_mode = 1
+disable_mode = 2
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialog Area Trigger"]
+scale = Vector2(0.2, 0.2)
+shape = SubResource("RectangleShape2D_jw1s5")
+
+[node name="Dialog Main" parent="." instance=ExtResource("3_cli33")]
+visible = false
+
+[node name="Quiz Main" parent="." instance=ExtResource("4_l6prb")]
+visible = false
+
+[connection signal="area_entered" from="Dialog Area Trigger" to="." method="_on_dialog_area_trigger_area_entered"]
+[connection signal="area_exited" from="Dialog Area Trigger" to="." method="_on_dialog_area_trigger_area_exited"]
+[connection signal="pressed" from="Dialog Main/Dialog Box/Next Button" to="." method="_on_next_button_pressed"]
+
+[editable path="Dialog Main"]

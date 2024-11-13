@@ -4,7 +4,8 @@
 	"quiz_answers": [
 	  "a",
 	  "b",
-	  "c"
+	  "c",
+	  "d"
 	],
 	"quiz_correct_answer": "c"
   },
@@ -13,7 +14,8 @@
 	"quiz_answers": [
 	  "a",
 	  "b",
-	  "c"
+	  "c",
+	  "d"
 	],
 	"quiz_correct_answer": "a"
   },
@@ -22,7 +24,8 @@
 	"quiz_answers": [
 	  "a",
 	  "b",
-	  "c"
+	  "c",
+	  "d"
 	],
 	"quiz_correct_answer": "b"
   }

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://buo4i7osqgig1"
-path="res://.godot/imported/sprite-buttonPressed.png-379824c9fde21d0d76f0dbfca2a0a91e.ctex"
+uid="uid://c5roca0hquy8o"
+path="res://.godot/imported/sprite_gabawa.png-d64bd8f9ae096208411d1f6ab7b84200.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Master/Assets/Art/sprite-buttonPressed.png"
-dest_files=["res://.godot/imported/sprite-buttonPressed.png-379824c9fde21d0d76f0dbfca2a0a91e.ctex"]
+source_file="res://Master/Assets/Art/Characters/sprite_gabawa.png"
+dest_files=["res://.godot/imported/sprite_gabawa.png-d64bd8f9ae096208411d1f6ab7b84200.ctex"]
 
 [params]
 

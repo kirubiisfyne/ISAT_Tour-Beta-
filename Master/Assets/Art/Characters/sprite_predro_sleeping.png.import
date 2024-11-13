@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://17xwk78uexyf"
-path="res://.godot/imported/BG ISAT.PNG-34164ec6409b51f2dbd7dc362432e6ce.ctex"
+uid="uid://dse0ohbobjtg2"
+path="res://.godot/imported/sprite_predro_sleeping.png-cd8203bed6e870a6100f99f5f68cbb77.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Master/Assets/Art/BG ISAT.PNG"
-dest_files=["res://.godot/imported/BG ISAT.PNG-34164ec6409b51f2dbd7dc362432e6ce.ctex"]
+source_file="res://Master/Assets/Art/Characters/sprite_predro_sleeping.png"
+dest_files=["res://.godot/imported/sprite_predro_sleeping.png-cd8203bed6e870a6100f99f5f68cbb77.ctex"]
 
 [params]
 

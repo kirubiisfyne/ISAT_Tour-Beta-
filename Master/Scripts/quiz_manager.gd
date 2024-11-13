@@ -1,6 +1,5 @@
-extends Control
+extends CanvasLayer
 
-#Initialize Quiz Class
 class Quiz:
 	var question: String
 	var answers: Array
@@ -15,31 +14,25 @@ var buttons
 var dialog_box
 var quizzes : Array = []
 var active_quiz
-
 func _ready():
 	dialog_box = get_node("Dialog Box/Question")
 	buttons = [
 	get_node("Button Container/Button1"), 
 	get_node("Button Container/Button2"), 
-	get_node("Button Container/Button3")
+	get_node("Button Container/Button3"),
+	get_node("Button Container/Button4")
 	]
-	
-	quizzes = load_json_file("res://Master/Scripts/SampleJSON - Sheet1.json")
+	quizzes = load_json_file("res://Master/Scripts/JSON/quiz_inputs.json")
 	for quiz in quizzes:
 		_enqueue(quizzes, quiz)
-	
 	_set_quiz(quizzes)
-	
-func _process(delta):
-	pass
-
 #functions
 #region Quiz Setup
 func _set_quiz(array : Array):
 	if quizzes.size() > 0:
 		active_quiz = _dequeue(array)
 	else:
-		print("No more questions in queue!")
+		SignalBus.quiz_finnished.emit()
 	if dialog_box:
 		dialog_box.text = active_quiz["quiz_question"]
 	for i in range(buttons.size()):
@@ -51,10 +44,8 @@ func _set_quiz(array : Array):
 func _enqueue(array, item):
 	if len(array) < 10:
 		array.push_back(item)
-
 func _dequeue(array):
 	var active = array.pop_front()
-	array.push_back(active)
 	return active
 #endregion
 #region JSON Loader
@@ -91,4 +82,6 @@ func _on_button_2_pressed():
 	_on_button_pressed($"Button Container/Button2")
 func _on_button_3_pressed():
 	_on_button_pressed($"Button Container/Button3")
+func _on_button_4_pressed():
+	_on_button_pressed($"Button Container/Button4")
 #endregion

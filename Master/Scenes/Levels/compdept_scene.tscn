@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://cifm780i8hfui"]
+
+[ext_resource type="Texture2D" uid="uid://66u17j50aixu" path="res://Master/Assets/Art/Backgrounds/background_compdept.png" id="1_ie8hc"]
+[ext_resource type="PackedScene" uid="uid://cnaf2ioq61qq6" path="res://Master/Scenes/character_male.tscn" id="2_c6vse"]
+[ext_resource type="PackedScene" uid="uid://i60a7v355voe" path="res://Master/Scenes/npc_character.tscn" id="3_lmg4n"]
+[ext_resource type="PackedScene" uid="uid://pl6k2kyosd5l" path="res://Master/Scenes/dialog_ui.tscn" id="4_6xfvg"]
+
+[node name="CompDept Main" type="Node2D"]
+
+[node name="background" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="background"]
+layout_mode = 1
+offset_right = 4424.0
+offset_bottom = 648.0
+texture = ExtResource("1_ie8hc")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+build_mode = 1
+polygon = PackedVector2Array(0, 0, 0, 525, 4424, 525, 4424, 0)
+
+[node name="Main Male" parent="." instance=ExtResource("2_c6vse")]
+z_index = 1
+position = Vector2(0, 32)
+
+[node name="NPC Main" parent="." node_paths=PackedStringArray("character_root", "controls_root") instance=ExtResource("3_lmg4n")]
+position = Vector2(1864, 384)
+level_key = 1
+dialog_key = "Compdept"
+json_file_path = "res://Master/Scripts/JSON/dialog_inputs.json"
+character_root = NodePath("../Main Male")
+controls_root = NodePath("../Main Male/Controls")
+
+[node name="Dialog Main" parent="." instance=ExtResource("4_6xfvg")]
+visible = false
+
+[editable path="Main Male"]
+[editable path="Main Male/Door Transition"]

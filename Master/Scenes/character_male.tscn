@@ -1,0 +1,130 @@
+[gd_scene load_steps=11 format=3 uid="uid://cnaf2ioq61qq6"]
+
+[ext_resource type="Script" path="res://Master/Scripts/character_movement.gd" id="1_w54k7"]
+[ext_resource type="Texture2D" uid="uid://dfj31yovprqyj" path="res://Master/Assets/Art/Characters/sprite_player_male.png" id="2_dvwsp"]
+[ext_resource type="PackedScene" uid="uid://cx1c54cyh0b8t" path="res://Master/Scenes/door_transition.tscn" id="3_5clud"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r40c3"]
+atlas = ExtResource("2_dvwsp")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_htxr7"]
+atlas = ExtResource("2_dvwsp")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6yht"]
+atlas = ExtResource("2_dvwsp")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdwmn"]
+atlas = ExtResource("2_dvwsp")
+region = Rect2(150, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p1qu5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r40c3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_htxr7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6yht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdwmn")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ilvuk"]
+height = 48.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vrgjj"]
+size = Vector2(20, 48)
+
+[node name="Male Main" type="Node2D"]
+scale = Vector2(7, 7)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(82.2857, 45.7143)
+script = ExtResource("1_w54k7")
+
+[node name="Character Sprite" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_p1qu5")
+animation = &"walking"
+autoplay = "idle"
+frame = 2
+frame_progress = 0.738843
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_ilvuk")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(8.71931e-06, -13.7143)
+limit_left = 0
+limit_top = 0
+limit_right = 4424
+limit_bottom = 648
+limit_smoothed = true
+position_smoothing_speed = 1.0
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="Interact Area" type="Area2D" parent="CharacterBody2D"]
+position = Vector2(-82.2857, -45.7143)
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Interact Area"]
+position = Vector2(82.2857, 45.7143)
+shape = SubResource("RectangleShape2D_vrgjj")
+
+[node name="Controls" type="CanvasLayer" parent="."]
+
+[node name="Movement Button Container" type="HBoxContainer" parent="Controls"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = -112.0
+offset_right = 448.0
+offset_bottom = -72.0
+grow_vertical = 0
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="Move Left Button" type="Button" parent="Controls/Movement Button Container"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="Move Right Button" type="Button" parent="Controls/Movement Button Container"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="Interact Button" type="Button" parent="Controls"]
+custom_minimum_size = Vector2(128, 128)
+offset_left = 928.0
+offset_top = 448.0
+offset_right = 1056.0
+offset_bottom = 576.0
+
+[node name="Door Transition" parent="." instance=ExtResource("3_5clud")]
+
+[connection signal="area_entered" from="CharacterBody2D/Interact Area" to="CharacterBody2D" method="_on_interact_area_area_entered"]
+[connection signal="area_exited" from="CharacterBody2D/Interact Area" to="CharacterBody2D" method="_on_interact_area_area_exited"]
+[connection signal="button_down" from="Controls/Movement Button Container/Move Left Button" to="CharacterBody2D" method="_on_move_left_button_button_down"]
+[connection signal="button_up" from="Controls/Movement Button Container/Move Left Button" to="CharacterBody2D" method="_on_move_left_button_button_up"]
+[connection signal="button_down" from="Controls/Movement Button Container/Move Right Button" to="CharacterBody2D" method="_on_move_right_button_button_down"]
+[connection signal="button_up" from="Controls/Movement Button Container/Move Right Button" to="CharacterBody2D" method="_on_move_right_button_button_up"]
+[connection signal="button_down" from="Controls/Interact Button" to="CharacterBody2D" method="_on_interact_button_button_down"]
+[connection signal="pressed" from="Controls/Interact Button" to="CharacterBody2D" method="_on_interact_button_pressed"]
+
+[editable path="Door Transition"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5roca0hquy8o"
-path="res://.godot/imported/Gabawa.png-f162e8aa284ea2ba8b1c26d248bb95de.ctex"
+uid="uid://dxqu3nemqeqc0"
+path="res://.godot/imported/background_new_site.png-390b3cea4a766b1e529dbaf028b76cd2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Master/Assets/Art/Gabawa.png"
-dest_files=["res://.godot/imported/Gabawa.png-f162e8aa284ea2ba8b1c26d248bb95de.ctex"]
+source_file="res://Master/Assets/Art/Backgrounds/background_new_site.png"
+dest_files=["res://.godot/imported/background_new_site.png-390b3cea4a766b1e529dbaf028b76cd2.ctex"]
 
 [params]
 

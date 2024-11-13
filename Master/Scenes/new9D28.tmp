@@ -1,0 +1,143 @@
+[gd_scene load_steps=4 format=3 uid="uid://bff3e1unjmr03"]
+
+[ext_resource type="FontFile" uid="uid://b1sufiued217m" path="res://Master/Assets/Fonts/Tiny5-Regular.ttf" id="1_3lbyk"]
+[ext_resource type="Script" path="res://Master/Scenes/map_manager.gd" id="1_7m0an"]
+[ext_resource type="Texture2D" uid="uid://dxqu3nemqeqc0" path="res://Master/Assets/Art/Backgrounds/background_new_site.png" id="2_8s5xx"]
+
+[node name="Map Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7m0an")
+
+[node name="Button Container" type="Node" parent="."]
+
+[node name="Button_Registrar" type="Button" parent="Button Container"]
+offset_left = 288.0
+offset_top = 176.0
+offset_right = 446.0
+offset_bottom = 211.0
+theme_override_colors/font_hover_pressed_color = Color(0.581034, 0.581033, 0.581033, 1)
+theme_override_colors/font_color = Color(0.835294, 0.835294, 0.835294, 1)
+theme_override_colors/font_outline_color = Color(0.235294, 0.235294, 0.235294, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_3lbyk")
+theme_override_font_sizes/font_size = 16
+disabled = true
+text = "Registrar"
+flat = true
+
+[node name="Button_CEA" type="Button" parent="Button Container"]
+offset_left = 752.0
+offset_top = 240.0
+offset_right = 910.0
+offset_bottom = 275.0
+theme_override_colors/font_hover_pressed_color = Color(0.581034, 0.581033, 0.581033, 1)
+theme_override_colors/font_color = Color(0.835294, 0.835294, 0.835294, 1)
+theme_override_colors/font_outline_color = Color(0.235294, 0.235294, 0.235294, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_3lbyk")
+theme_override_font_sizes/font_size = 16
+disabled = true
+text = "CEA"
+flat = true
+
+[node name="Button_CompDept" type="Button" parent="Button Container"]
+offset_left = 760.0
+offset_top = 416.0
+offset_right = 918.0
+offset_bottom = 451.0
+theme_override_colors/font_hover_pressed_color = Color(0.581034, 0.581033, 0.581033, 1)
+theme_override_colors/font_color = Color(0.835294, 0.835294, 0.835294, 1)
+theme_override_colors/font_outline_color = Color(0.235294, 0.235294, 0.235294, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_3lbyk")
+theme_override_font_sizes/font_size = 16
+disabled = true
+text = "Computer Dept"
+flat = true
+
+[node name="Button_Research Hub" type="Button" parent="Button Container"]
+offset_left = 296.0
+offset_top = 512.0
+offset_right = 454.0
+offset_bottom = 547.0
+theme_override_colors/font_hover_pressed_color = Color(0.581034, 0.581033, 0.581033, 1)
+theme_override_colors/font_color = Color(0.835294, 0.835294, 0.835294, 1)
+theme_override_colors/font_outline_color = Color(0.235294, 0.235294, 0.235294, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_3lbyk")
+theme_override_font_sizes/font_size = 16
+disabled = true
+text = "Research Hub
+"
+flat = true
+
+[node name="Button_Guard" type="Button" parent="Button Container"]
+offset_left = 872.0
+offset_top = 448.0
+offset_right = 1030.0
+offset_bottom = 483.0
+theme_override_colors/font_hover_pressed_color = Color(0.581034, 0.581033, 0.581033, 1)
+theme_override_colors/font_color = Color(0.835294, 0.835294, 0.835294, 1)
+theme_override_colors/font_outline_color = Color(0.235294, 0.235294, 0.235294, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_3lbyk")
+theme_override_font_sizes/font_size = 16
+disabled = true
+text = "Guard
+"
+flat = true
+
+[node name="Button_Biology" type="Button" parent="Button Container"]
+offset_left = 584.0
+offset_top = 456.0
+offset_right = 742.0
+offset_bottom = 491.0
+theme_override_colors/font_hover_pressed_color = Color(0.581034, 0.581033, 0.581033, 1)
+theme_override_colors/font_color = Color(0.835294, 0.835294, 0.835294, 1)
+theme_override_colors/font_outline_color = Color(0.235294, 0.235294, 0.235294, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_3lbyk")
+theme_override_font_sizes/font_size = 16
+disabled = true
+text = "Biology"
+flat = true
+
+[node name="Button_Science Building" type="Button" parent="Button Container"]
+offset_left = 592.0
+offset_top = 200.0
+offset_right = 750.0
+offset_bottom = 235.0
+theme_override_colors/font_hover_pressed_color = Color(0.581034, 0.581033, 0.581033, 1)
+theme_override_colors/font_color = Color(0.835294, 0.835294, 0.835294, 1)
+theme_override_colors/font_outline_color = Color(0.235294, 0.235294, 0.235294, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_3lbyk")
+theme_override_font_sizes/font_size = 16
+disabled = true
+text = "Science Building
+"
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_8s5xx")
+expand_mode = 1
+
+[connection signal="pressed" from="Button Container/Button_Registrar" to="." method="_on_button_registrar_pressed"]
+[connection signal="pressed" from="Button Container/Button_CEA" to="." method="_on_button_cea_pressed"]
+[connection signal="pressed" from="Button Container/Button_CompDept" to="." method="_on_button_comp_dept_pressed"]
+[connection signal="pressed" from="Button Container/Button_Research Hub" to="." method="_on_button_research_hub_pressed"]
+[connection signal="pressed" from="Button Container/Button_Guard" to="." method="_on_button_guard_pressed"]
+[connection signal="pressed" from="Button Container/Button_Biology" to="." method="_on_button_biology_pressed"]
+[connection signal="pressed" from="Button Container/Button_Science Building" to="." method="_on_button_science_building_pressed"]

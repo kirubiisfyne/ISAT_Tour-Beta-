@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=3 uid="uid://d3e8ipfoyjs2j"]
+
+[ext_resource type="Script" path="res://Master/Scenes/menu_main.gd" id="1_70s33"]
+[ext_resource type="Texture2D" uid="uid://17xwk78uexyf" path="res://Master/Assets/Art/Backgrounds/background_title.png" id="1_rqom4"]
+[ext_resource type="Texture2D" uid="uid://dtgm8wkn4040p" path="res://Master/Assets/Art/UI/sprite_logo.png" id="2_vpvn7"]
+[ext_resource type="FontFile" uid="uid://b1sufiued217m" path="res://Master/Assets/Fonts/Tiny5-Regular.ttf" id="3_vqrd7"]
+[ext_resource type="PackedScene" uid="uid://cx1c54cyh0b8t" path="res://Master/Scenes/door_transition.tscn" id="5_2tg6r"]
+
+[node name="Menu Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_70s33")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_rqom4")
+
+[node name="Logo" type="Sprite2D" parent="Background"]
+position = Vector2(576, 200)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("2_vpvn7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -264.0
+offset_right = 128.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 24
+
+[node name="Play Button" type="Button" parent="Background/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("3_vqrd7")
+theme_override_font_sizes/font_size = 48
+text = "PLAY"
+flat = true
+
+[node name="Settings Button" type="Button" parent="Background/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("3_vqrd7")
+theme_override_font_sizes/font_size = 48
+text = "SETTINGS"
+flat = true
+
+[node name="Exit button" type="Button" parent="Background/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("3_vqrd7")
+theme_override_font_sizes/font_size = 48
+text = "QUIT"
+flat = true
+
+[node name="Door Transition" parent="." instance=ExtResource("5_2tg6r")]
+
+[connection signal="pressed" from="Background/VBoxContainer/Play Button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Background/VBoxContainer/Settings Button" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Background/VBoxContainer/Exit button" to="." method="_on_exit_button_pressed"]
+[connection signal="animation_finished" from="Door Transition/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+
+[editable path="Door Transition"]
